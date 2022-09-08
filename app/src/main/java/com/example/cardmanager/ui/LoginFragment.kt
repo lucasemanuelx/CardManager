@@ -15,12 +15,13 @@ import androidx.navigation.fragment.findNavController
 import com.example.cardmanager.R
 import com.example.cardmanager.databinding.FragmentLoginBinding
 import com.example.cardmanager.model.LoginViewModel
+import com.example.cardmanager.network.UserInfo
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class LoginFragment : Fragment() {
     private lateinit var viewModel: LoginViewModel
     private lateinit var binding: FragmentLoginBinding
-//    private lateinit var request: UserInfo
+    private lateinit var request: UserInfo
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
@@ -40,11 +41,11 @@ class LoginFragment : Fragment() {
             navigateCreateAccount()
         }
 
-//        binding.buttonLogin.setOnClickListener {
-//            if (isOnline()) {
-//                tryLogin()
-//            }
-//        }
+        binding.buttonLogin.setOnClickListener {
+            if (isOnline()) {
+                tryLogin()
+            }
+        }
 
         return binding.root
     }
@@ -52,7 +53,7 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         ObserveLoginIsValid()
-//        OberserveShouldNavigateToMyCards()
+        OberserveShouldNavigateToMyCards()
     }
 
     private fun ObserveLoginIsValid() {
@@ -66,26 +67,26 @@ class LoginFragment : Fragment() {
         }
     }
 
-//    private fun OberserveShouldNavigateToMyCards() {
-//        viewModel.shouldNavigateHome.observe(viewLifecycleOwner) {
-//            if (it) {
-//                navigateToMyCards()
-//            }
-//        }
-//    }
+    private fun OberserveShouldNavigateToMyCards() {
+        viewModel.shouldNavigateHome.observe(viewLifecycleOwner) {
+            if (it) {
+                navigateToMyCards()
+            }
+        }
+    }
 
-//    private fun tryLogin() {
-//        val currentEmail = viewModel.loginEmail.value.toString()
-//        val currentPassword = viewModel.loginPassword.value.toString()
-//        request = UserInfo(
-//            avatar = null,
-//            email = currentEmail,
-//            password = currentPassword,
-//            name = null,
-//            token = null
-//        )
-//        viewModel.onLogin(request)
-//    }
+    private fun tryLogin() {
+        val currentEmail = viewModel.loginEmail.value.toString()
+        val currentPassword = viewModel.loginPassword.value.toString()
+        request = UserInfo(
+            avatar = null,
+            email = currentEmail,
+            password = currentPassword,
+            name = null,
+            token = null
+        )
+        viewModel.onLogin(request)
+    }
 
     private fun showHide() {
         if (binding.buttonShowHide.contentDescription.equals("Show")) {
@@ -104,9 +105,9 @@ class LoginFragment : Fragment() {
         findNavController().navigate(R.id.action_loginFragment_to_createAccountFragment)
     }
 
-//    private fun navigateToMyCards() {
-//        findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
-//    }
+    private fun navigateToMyCards() {
+        findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+    }
 
     private fun dialog(title: String, message: String) {
         val textColor = context?.getColorStateList(R.color.global_black)
