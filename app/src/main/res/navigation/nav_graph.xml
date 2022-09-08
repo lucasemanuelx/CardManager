@@ -7,5 +7,16 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.cardmanager.ui.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_createAccountFragment"
+            app:destination="@id/createAccountFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountFragment"
+        android:name="com.example.cardmanager.ui.CreateAccountFragment"
+        android:label="fragment_create_account"
+        tools:layout="@layout/fragment_create_account" />
 </navigation>

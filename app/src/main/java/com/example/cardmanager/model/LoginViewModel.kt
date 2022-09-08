@@ -1,10 +1,13 @@
 package com.example.cardmanager.model
 
+import android.content.SharedPreferences
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class LoginViewModel : ViewModel() {
+class LoginViewModel(
+    sharedPreferences: SharedPreferences
+) : ViewModel() {
     var loginEmail = MutableLiveData<String>("iosbootcamp2@ciandt.com")
     var loginPassword = MutableLiveData<String>("strongpwd")
 

@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2215" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.27355072463768115" />
+        <entry key="app/src/main/res/layout/fragment_create_account.xml" value="0.29483695652173914" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.27355072463768115" />
       </map>
     </option>
