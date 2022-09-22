@@ -11,7 +11,7 @@ class RetrofitNetwork {
         private val client = OkHttpClient.Builder().build()
 
         private val BASE_URL: String =
-            "https://9eaa-2804-d4b-7971-700-f933-19a5-ab6-2a87.sa.ngrok.io/"
+            "https://cb1d-2804-d4b-7971-700-6450-c639-fe0e-82a3.sa.ngrok.io/"
 
         private val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())

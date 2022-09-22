@@ -22,6 +22,8 @@ class ItemAdapter(private val dataset: ArrayList<CreditCard>) :
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
+        holder.itemView.elevation = 30.0f * position
+        holder.itemView.hasOverlappingRendering
         holder.cardImage.setImageResource(item.cardImg)
     }
 
