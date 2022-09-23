@@ -15,5 +15,6 @@ class ItemDecorator(private val mSpace: Int) : ItemDecoration() {
     ) {
         val position = parent.getChildAdapterPosition(view)
         if (position != 0) outRect.top = mSpace
+//        outRect.set(0, -300, 0,0)
     }
 }

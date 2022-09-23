@@ -41,12 +41,9 @@ class MyCardsFragment : Fragment() {
 
         adapter = ItemAdapter(newCardList)
         recyclerView.adapter = adapter
-
-        layoutManager.reverseLayout = true
-//        layoutManager.stackFromEnd = true
         recyclerView.layoutManager = layoutManager
-        recyclerView.addItemDecoration(ItemDecorator(-102))
-
+        layoutManager.stackFromEnd = true
+        recyclerView.addItemDecoration(ItemDecorator(-270))
     }
 
     private fun dataInitialized() {
