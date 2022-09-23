@@ -6,7 +6,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.cardmanager.network.*
-import com.example.cardmanager.network.*
 import com.example.cardmanager.utils.SessionManager
 import retrofit2.Call
 import retrofit2.Callback
@@ -63,7 +62,7 @@ class LoginViewModel(
                 override fun onResponse(call: Call<UserInfo>, response: Response<UserInfo>) {
                     val userLogin = response.body()
                     Log.d("requestToken", "${userLogin?.token}")
-                    sessionManager.saveOnSharedPreferences(
+                    sessionManager.saveLoginOnSharedPreferences(
                         userLogin!!.avatar!!,
                         userLogin.name!!,
                         userLogin.email!!,
@@ -93,8 +92,19 @@ class LoginViewModel(
                 call: Call<List<CardInfo>>,
                 response: Response<List<CardInfo>>
             ) {
-                response.body()?.forEach {
-                    Log.i("requestRetrofit", "${it}")
+                val cards = response.body()
+                var iterator = 0
+                cards?.forEach {
+                    sessionManager.saveCardOnSharedPreferences(
+                        "${iterator}", it.id!!,
+                        "${iterator}", it.flag!!,
+                        "${iterator}", it.number!!,
+                        "${iterator}", it.expDate!!,
+                        "${iterator}", it.limitValue!!,
+                        "${iterator}", it.availableValue!!,
+                    )
+                    Log.d("requestRetrofit", "${sessionManager.getCardId("$iterator")}")
+                    iterator += 1
                 }
             }
         }
