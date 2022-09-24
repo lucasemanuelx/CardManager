@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--    Card Manager Colors-->
+    <color name="future_red">#e3183e</color>
+    <color name="lean_white">#ffffff</color>
+    <color name="global_black">#80000000</color>
+    <color name="pig_pink">#f2b5c0</color>
+    <color name="warm_grey">#727272</color>
+    <color name="new_aqua">#20bec6</color>
+    <color name="background_white">#f9f7f7</color>
+
 </resources>
