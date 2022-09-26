@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<!--    <data>-->
-<!--        <variable-->
-<!--            name="loginViewModel"-->
-<!--            type="com.example.cardmanager.model.LoginViewModel" />-->
-<!--    </data>-->
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.example.cardmanager.model.LoginViewModel" />
+    </data>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,7 +28,7 @@
             android:inputType="textEmailAddress"
             android:maxLength="100"
             android:maxLines="1"
-            android:text=""
+            android:text="@={loginViewModel.loginEmail}"
             android:textColor="@color/lean_white"
             android:textColorHint="@color/lean_white"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +47,7 @@
             android:inputType="textPassword"
             android:maxLength="9"
             android:maxLines="1"
-            android:text=""
+            android:text="@={loginViewModel.loginPassword}"
             android:textColor="@color/lean_white"
             android:textColorHint="@color/lean_white"
             app:layout_constraintEnd_toEndOf="parent"
