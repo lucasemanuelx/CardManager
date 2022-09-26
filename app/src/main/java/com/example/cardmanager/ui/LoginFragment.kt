@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.example.cardmanager.R
 import com.example.cardmanager.databinding.FragmentLoginBinding
 import com.example.cardmanager.model.LoginViewModel
 
@@ -19,6 +21,11 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         viewModel = LoginViewModel()
 
+        binding.buttonCreateAccount.setOnClickListener {
+            navigateCreateAccount()
+        }
+
+
         binding.buttonLogin.setOnClickListener {
             tryLogin()
         }
@@ -32,5 +39,9 @@ class LoginFragment : Fragment() {
 
     private fun tryLogin() {
         viewModel.onLogin()
+    }
+
+    private fun navigateCreateAccount() {
+        findNavController().navigate(R.id.action_loginFragment_to_createAccountFragment)
     }
 }

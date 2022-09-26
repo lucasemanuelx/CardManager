@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+<!--    <data>-->
+<!--        <variable-->
+<!--            name="createAccountViewModel"-->
+<!--            type="com.example.cardmanager.model.CreateAccountViewModel" />-->
+<!--    </data>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.cardmanager.ui.CreateAccountFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/future_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/screenTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="Create Account"
+            android:textColor="@color/lean_white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/toolBar"
+            app:layout_constraintStart_toEndOf="@+id/buttonBack"
+            app:layout_constraintTop_toTopOf="@+id/toolBar" />
+
+        <ImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/toolBar"
+            app:layout_constraintStart_toStartOf="@+id/toolBar"
+            app:layout_constraintTop_toTopOf="@+id/toolBar"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:contentDescription="Arrow Back"
+            android:layout_marginStart="16dp"
+            android:background="#00FFFFFF"
+            app:tint="@color/lean_white" />
+
+        <EditText
+            android:id="@+id/createAccountName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:ems="16"
+            android:hint="Name"
+            android:text=""
+            android:inputType="textPersonName"
+            android:maxLength="100"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+
+        <EditText
+            android:id="@+id/createAccountEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:ems="16"
+            android:hint="E-mail"
+            android:text=""
+            android:inputType="textEmailAddress"
+            android:maxLength="100"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createAccountName" />
+
+        <EditText
+            android:id="@+id/createAccountCellPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:ems="16"
+            android:hint="Cell Phone"
+            android:text=""
+            android:digits="0123456789( )-"
+            android:inputType="phone"
+            android:maxLength="15"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createAccountEmail" />
+
+        <EditText
+            android:id="@+id/createAccountCreditCardNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:ems="16"
+            android:hint="Credit Card Number"
+            android:text=""
+            android:digits="0123456789 "
+            android:inputType="number"
+            android:maxLength="19"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createAccountCellPhone" />
+
+        <CheckBox
+            android:id="@+id/checkBoxTermsOfUse"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonCreateAccount"
+            app:layout_constraintStart_toStartOf="parent"
+            android:buttonTint="@color/warm_grey"/>
+
+        <TextView
+            android:id="@+id/iAgree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I've read and agree with the"
+            android:textColor="@color/warm_grey"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/checkBoxTermsOfUse"
+            app:layout_constraintStart_toEndOf="@+id/checkBoxTermsOfUse"
+            app:layout_constraintTop_toTopOf="@+id/checkBoxTermsOfUse"/>
+
+        <TextView
+            android:id="@+id/termsOfUse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:linksClickable="true"
+            android:text="Terms of Use."
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iAgree"
+            app:layout_constraintStart_toEndOf="@+id/iAgree"
+            app:layout_constraintTop_toTopOf="@+id/iAgree" />
+
+        <Button
+            android:id="@+id/buttonCreateAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="328dp"
+            android:text="Create Account"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/button_enabled_disabled"
+            android:enabled="false"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
